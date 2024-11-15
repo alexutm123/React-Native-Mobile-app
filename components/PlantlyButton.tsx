@@ -29,12 +29,13 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 18,
     fontWeight: "bold",
+    textAlign: "center",
   },
   button: {
     paddingHorizontal: 18,
     paddingVertical: 12,
     borderRadius: 6,
-    backgroundColor: theme.colorGreen,
+    backgroundColor: theme.colorGreen
   },
   buttonPressed: {
     opacity: 0.7,
