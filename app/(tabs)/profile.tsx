@@ -1,9 +1,14 @@
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, Button } from "react-native";
 import { theme } from "@/theme";
+import { useUserStore } from "@/store/userStore";
 export default function ProfileScreen() {
+  const toggleHasOnBoarded = useUserStore((state) => state.toggleHadOnBoarded);
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Profile</Text>
+      <Button
+        title="Logout"
+        onPress={toggleHasOnBoarded}
+      />
     </View>
   );
 }
@@ -14,8 +19,5 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: theme.colorWhite,
-  },
-  text: {
-    fontSize: 24,
-  },
+  }
 });
