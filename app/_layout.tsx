@@ -11,6 +11,13 @@ export default function RootLayout() {
           headerShown: false,
         }}
       />
+         <Stack.Screen
+        name="flower/[id]"
+        options={{
+          animation: "fade",
+          title: "Flower",
+        }}
+      />
     </Stack>
   );
 }
