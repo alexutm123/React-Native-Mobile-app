@@ -12,7 +12,7 @@ export function PlantCard({ plant }: { plant: PlantType }) {
   return (
     <View style={styles.plantCard}>
         <View style={styles.imageContainer}>
-         <PlantlyImage size={100} />
+          <PlantlyImage size={100} imageUri={plant.imageUri} />
             <View style={styles.details}>
                 <Text numberOfLines={1} style={styles.plantName}>
                 {plant.name}
