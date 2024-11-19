@@ -1,6 +1,7 @@
-import { Stack } from "expo-router";
+import { Stack,SplashScreen } from "expo-router";
 
 export default function RootLayout() {
+  SplashScreen.preventAutoHideAsync();
   return (
     <Stack>
       <Stack.Screen name="(tabs)" options={{ headerShown: false,animation:"fade" }} />
