@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "plantly",
+    "name": "Plantly",
     "slug": "plantly",
     "scheme": "plantly",
     "version": "1.0.0",
@@ -20,7 +20,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.zak_2211.plantly"
     },
     "web": {
       "favicon": "./assets/favicon.png",
