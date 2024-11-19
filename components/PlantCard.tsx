@@ -3,6 +3,7 @@ import { theme } from "@/theme";
 import { PlantType, usePlantStore } from "@/store/plantsStore";
 import { PlantlyImage } from "./PlantlyImage";
 import AntDesign from '@expo/vector-icons/AntDesign';
+import { Link } from "expo-router";
 
 export function PlantCard({ plant }: { plant: PlantType }) {
   const removePlant = usePlantStore((state) => state.removePlant);
@@ -10,22 +11,24 @@ export function PlantCard({ plant }: { plant: PlantType }) {
     removePlant(plant.id);
   }
   return (
-    <View style={styles.plantCard}>
-        <View style={styles.imageContainer}>
-          <PlantlyImage size={100} imageUri={plant.imageUri} />
-            <View style={styles.details}>
-                <Text numberOfLines={1} style={styles.plantName}>
-                {plant.name}
-                </Text>
-                <Text style={styles.subtitle}>
-                Water every {plant.wateringFrequencyDays} days
-                </Text>
-            </View>
-        </View>
-      <Pressable onPress={handlePress}>
-        <AntDesign name="closecircleo" size={24} color={theme.colorGreen} />
+    <Link href={`plants/${plant.id}`} asChild>
+      <Pressable style={styles.plantCard}>
+          <View style={styles.imageContainer}>
+            <PlantlyImage size={100} imageUri={plant.imageUri} />
+              <View style={styles.details}>
+                  <Text numberOfLines={1} style={styles.plantName}>
+                  {plant.name}
+                  </Text>
+                  <Text style={styles.subtitle}>
+                  Water every {plant.wateringFrequencyDays} days
+                  </Text>
+              </View>
+          </View>
+        <Pressable onPress={handlePress}>
+          <AntDesign name="closecircleo" size={24} color={theme.colorGreen} />
+        </Pressable>
       </Pressable>
-    </View>
+    </Link>
   );
 }
 
