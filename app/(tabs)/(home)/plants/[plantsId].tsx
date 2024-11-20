@@ -21,7 +21,13 @@ export default function PlantScreen() {
     useEffect(() => {
         navigation.setOptions({ title: plant?.name });
     }, [plant?.name, navigation]);
-    
+    useEffect(() => {
+      if (params.action === "water") {
+        if (typeof plantId === "string") {
+          waterPlant(plantId);
+        }
+     }
+    }, []);
     const handleWaterPlant = () => {
         if (typeof plantId === "string") {
           waterPlant(plantId);
