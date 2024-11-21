@@ -38,15 +38,20 @@
       ],
       [
         "expo-quick-actions",
-      {
-         "androidIcons": {
-          "leaf":{
-            "foregroundImage": "./assets/leaf.png",
-            "backgroundColor": "#ffffff"
+        {
+          "androidIcons": {
+            "leaf": {
+              "foregroundImage": "./assets/leaf.png",
+              "backgroundColor": "#ffffff"
+            }
           }
         }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "1ea2868a-2d51-4e5f-ae07-2c3157537b2f"
       }
-    ]
-    ]
+    }
   }
 }

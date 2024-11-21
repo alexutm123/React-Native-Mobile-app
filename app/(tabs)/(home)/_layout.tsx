@@ -32,6 +32,13 @@ export default function Layout() {
           headerBackTitle: "",
           headerTintColor: theme.colorBlack,
         }} />
+         <Stack.Screen
+        name="new"
+        options={{
+          presentation: "modal",
+          title: "New plant",
+        }}
+      />
     </Stack>
   );
 }
