@@ -6,6 +6,7 @@ import { PlantlyButton } from "@/components/PlantlyButton";
 import { theme } from "@/theme";
 import { useEffect } from "react";
 import { PlantlyImage } from "@/components/PlantlyImage";
+import * as Notifications from "expo-notifications";
 
 const fullDateFormat = "LLL d yyyy, h:mm aaa";
 export default function PlantScreen() {
@@ -27,18 +28,36 @@ export default function PlantScreen() {
           waterPlant(plantId);
         }
      }
+    //  (async () => {
+    //   await Notifications.scheduleNotificationAsync({
+    //     content: {
+    //       title: "You've got mail! 📬",
+    //       body: "Here is the notification body",
+    //       data: { data: "secret message" },
+    //     },
+    //     trigger: null,
+    //   });
+    // })();
+
     }, []);
-    const handleWaterPlant = () => {
+    const handleWaterPlant = async () => {
         if (typeof plantId === "string") {
           waterPlant(plantId);
         }
+        await Notifications.scheduleNotificationAsync({
+          content: {
+            title: "You've got mail! 📬",
+            body: 'Here is the notification body',
+            data: { data: 'secret message'},
+          },
+          trigger: null,
+        });
       };
     
       const handleDeletePlant = () => {
         if (!plant?.id) {
           return;
         }
-    
         Alert.alert(
           `Are you sure you want to delete ${plant?.name}?`,
           "It will be gone for good",

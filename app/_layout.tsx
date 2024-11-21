@@ -3,6 +3,15 @@ import { useEffect } from "react";
 import * as QuickActions from "expo-quick-actions";
 import { Platform } from "react-native";
 import { useQuickActionRouting } from "expo-quick-actions/router";
+import * as Notifications from "expo-notifications";
+
+Notifications.setNotificationHandler({
+  handleNotification: async () => ({
+    shouldShowAlert: true,
+    shouldPlaySound: true,
+    shouldSetBadge: true,  
+  })
+})
 export default function Layout() {
   useQuickActionRouting();
   useEffect(() => {
