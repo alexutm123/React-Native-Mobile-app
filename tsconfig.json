@@ -6,6 +6,9 @@
       "@/*": [
        "./*"
       ]
-    }
+    },
+    "moduleResolution": "node",
+    "allowJs": true,
+    "resolveJsonModule": true
   }
 }
